@@ -19,7 +19,6 @@ function App() {
           setNews(response.data.articles);
         } catch (error) {
           console.error("Error fetching news:", error);
-          console.log(API_KEY)
         } finally {
           setLoading(false); // Set loading state to false after fetching
         }
