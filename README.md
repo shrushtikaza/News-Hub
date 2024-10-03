@@ -1,7 +1,3 @@
-Here's a detailed `README.md` file for your *News Hub* project:
-
----
-
 # News Hub 📰
 
 **News Hub** is a responsive news application built using React.js that fetches and displays real-time news from the [NewsAPI](https://newsapi.org/). The app features an engaging UI with card-based layout, where each news article is presented with its headline, publication date, and a brief summary. It offers a hover effect that enlarges the card for easy reading and provides a seamless experience across all device types.
