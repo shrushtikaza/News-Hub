@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API_KEY = process.env.REACT_APP_API_KEY; // Replace with your NewsAPI key
+const API_KEY = process.env.REACT_APP_API_KEY; 
 
 function App() {
   const [news, setNews] = useState([]);
@@ -15,7 +15,7 @@ function App() {
       const fetchNews = async () => {
         try {
           setLoading(true);  // Set loading state to true
-          const response = await axios.get(`https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`);
+          const response = await axios.get(`http://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`);
           setNews(response.data.articles);
         } catch (error) {
           console.error("Error fetching news:", error);
