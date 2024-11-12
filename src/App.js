@@ -16,6 +16,7 @@ function App() {
       const fetchNews = async () => {
         try {
           setLoading(true);
+          console.log("Backend URL: ", backendUrl);
           const response = await axios.get(`${backendUrl}/news?query=${query}`);
           setNews(response.data.articles);
         } catch (error) {
