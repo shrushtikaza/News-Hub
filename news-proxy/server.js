@@ -20,7 +20,6 @@ app.use(cors({
 app.get("/news", async (req, res) => {
   const { query } = req.query;
   const API_KEY = process.env.REACT_APP_API_KEY;
-
   try {
     const response = await axios.get(`https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`);
     res.json(response.data);
