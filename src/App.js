@@ -14,7 +14,7 @@ function App() {
       const fetchNews = async () => {
         try {
           setLoading(true);
-          const response = await axios.get(`http://localhost:5000/news?query=${query}`);
+          const response = await axios.get(`http://localhost:5001/news?query=${query}`);
           setNews(response.data.articles);
         } catch (error) {
           console.error("Error fetching news:", error);
