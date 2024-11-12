@@ -10,22 +10,22 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // Fetch news only if query is not empty
     if (query) {
       const fetchNews = async () => {
         try {
-          setLoading(true);  // Set loading state to true
-          const response = await axios.get(`https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`);
+          setLoading(true);
+          const response = await axios.get(`http://localhost:5000/news?query=${query}`);
           setNews(response.data.articles);
         } catch (error) {
           console.error("Error fetching news:", error);
         } finally {
-          setLoading(false); // Set loading state to false after fetching
+          setLoading(false);
         }
       };
       fetchNews();
     }
   }, [query]);
+  
 
   const handleSearch = (event) => {
     event.preventDefault();
