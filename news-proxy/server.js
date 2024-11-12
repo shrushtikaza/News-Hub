@@ -1,9 +1,14 @@
 const express = require("express");
 const axios = require("axios");
+const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-const port = 5000;
+const port = 5001;
+
+app.use(cors({
+    origin: 'https://news-hub-dy3t.onrender.com'
+}));
 
 app.get("/news", async (req, res) => {
   const { query } = req.query;
