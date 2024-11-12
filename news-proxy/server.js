@@ -5,9 +5,16 @@ require("dotenv").config();
 
 const app = express();
 const port = 5001;
+const allowedOrigins = ['http://localhost:3000', 'https://news-hub-dy3t.onrender.com'];
 
 app.use(cors({
-    origin: 'https://news-hub-dy3t.onrender.com'
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {  
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
 }));
 
 app.get("/news", async (req, res) => {
