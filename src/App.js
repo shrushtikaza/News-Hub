@@ -9,12 +9,14 @@ function App() {
   const [query, setQuery] = useState(''); // Start with an empty query
   const [loading, setLoading] = useState(false);
 
+  const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5001';
+
   useEffect(() => {
     if (query) {
       const fetchNews = async () => {
         try {
           setLoading(true);
-          const response = await axios.get(`http://localhost:5001/news?query=${query}`);
+          const response = await axios.get(`${backendUrl}/news?query=${query}`);
           setNews(response.data.articles);
         } catch (error) {
           console.error("Error fetching news:", error);

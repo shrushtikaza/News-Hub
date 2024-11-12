@@ -4,7 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-const port = 5001;
+const port = process.env.PORT || 5001;
 const allowedOrigins = ['http://localhost:3000', 'https://news-hub-dy3t.onrender.com'];
 
 app.use(cors({
